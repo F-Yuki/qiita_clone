@@ -47,7 +47,6 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-
 rspec:
   executor:
     name: default_container
@@ -86,7 +85,6 @@ rspec:
     - store_artifacts:
         path: ~/tmp/test-results
         destination: test-results
-
 rubocop:
   executor:
     name: default_container
@@ -100,7 +98,6 @@ rubocop:
         name: Execute rubocop
         command: |
           bundle exec rubocop
-
 workflows:
   build:
     jobs:
