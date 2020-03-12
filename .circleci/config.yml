@@ -76,6 +76,7 @@ jobs:
             TEST_FILES="$(circleci tests glob \"spec/**/*_spec.rb\" | circleci tests split --split-by=timings)"
             bundle exec rspec --require rails_helper \
                               --color \
+                              --format RspecJunitFormatter \
                               --format progress \
                               --out ~/rspec/rspec.xml
 
