@@ -2,14 +2,14 @@ version: 2.1
 executors:
   default_container:
     docker:
-      - image: circleci/ruby:2.5.1-stretch
+      - image: circleci/ruby:2.5.1
         environment:
           RAILS_ENV: test
           BUNDLE_JOBS: 4
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
-          BUNDLER_VERSION: 2.1.4
-      - image: circleci/mysql:5.7.29
+          BUNDLER_VERSION: 2.0.1
+      - image: circleci/mysql:latest
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
     working_directory: ~/qiita_clone
@@ -18,7 +18,7 @@ commands:
   install_bundler:
     description: Bundler install
     steps:
-      - run: gem install bundler -v 2.1.4
+      - run: gem install bundler -v 2.0.1
 
 jobs:
   fetch_source_code:
@@ -37,14 +37,14 @@ jobs:
       - restore_cache:
           key: v1-qiita_clone-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
-          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - install_bundler
       - run:
           name: Bundle Install Dependencies
           command: |
             bundle install
       - save_cache:
-          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
   rspec:
@@ -54,7 +54,7 @@ jobs:
       - restore_cache:
           key: v1-qiita_clone-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
-          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - run:
           name: Watting stand up database
           command: |
@@ -92,7 +92,7 @@ jobs:
       - restore_cache:
           key: v1-qiita_clone-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
-          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - install_bundler
       - run:
           name: Execute rubocop
