@@ -60,7 +60,7 @@ jobs:
           command: |
             dockerize -wait \
             tcp://127.0.0.1:3306 -timeout 120s
-      # Database setup
+
       - run: mv ./config/database.yml.ci ./config/database.yml
       - install_bundler
       - run:
@@ -79,7 +79,7 @@ jobs:
                               --format progress \
                               --format RspecJunitFormatter \
                               --out ~/rspec/rspec.xml
-      # collect reports
+
       - store_test_results:
           path: ~/rspec
       - store_artifacts:
@@ -89,9 +89,9 @@ jobs:
     executor:
       name: default_container
     steps:
-      - restore_cache: # ソースコードの復元
+      - restore_cache:
           key: v1-qiita_clone-{{ .Environment.CIRCLE_SHA1 }}
-      - restore_cache: # vendor/bundleを復元
+      - restore_cache:
           key: v2-dependencies-{{ checksum "Gemfile.lock" }}
       - install_bundler
       - run:
