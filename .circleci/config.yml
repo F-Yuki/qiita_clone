@@ -61,8 +61,8 @@ jobs:
             dockerize -wait \
             tcp://127.0.0.1:3306 -timeout 120s
 
-      # - run: mv ./config/database.yml.ci ./config/database.yml
-      # - install_bundler
+      - run: mv ./config/database.yml.ci ./config/database.yml
+      - install_bundler
       - run:
           name: Testing DB migration and seed
           command: |
@@ -79,7 +79,6 @@ jobs:
                               --format RspecJunitFormatter \
                               --format progress \
                               --out ~/rspec/rspec.xml
-
       - store_test_results:
           path: ~/rspec
       - store_artifacts:
