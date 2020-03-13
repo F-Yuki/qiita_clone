@@ -62,7 +62,7 @@ jobs:
             tcp://127.0.0.1:3306 -timeout 120s
 
       # - run: mv ./config/database.yml.ci ./config/database.yml
-      # - install_bundler
+      - install_bundler
       - run:
           name: Testing DB migration and seed
           command: |
