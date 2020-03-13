@@ -9,7 +9,7 @@ executors:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
           BUNDLER_VERSION: 2.0.1
-      - image: circleci/mysql: latest
+      - image: circleci/mysql:latest
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
     working_directory: ~/qiita_clone
