@@ -32,7 +32,7 @@ group :development, :test do
   gem "rubocop-rspec"
   gem "factory_bot_rails"
   gem "faker"
-
+  gem 'mini_racer'
 end
 
 group :development do
