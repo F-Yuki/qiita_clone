@@ -6,9 +6,10 @@ services:
     image: mysql:latest
     ports:
       - 3306:3306
-    command: --default-authentication-plugin=caching_sha2_password
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - mysql-datavolume:/var/lib/mysql
+      # - mysql-datavolume:/var/lib/mysql
+      - ./mysql-confd:/etc/mysql/conf.d
     environment:
       MYSQL_ROOT_PASSWORD: root
 
