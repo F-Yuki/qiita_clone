@@ -9,7 +9,6 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql-datavolume:/var/lib/mysql
-      - ./mysql-confd:/etc/mysql/conf.d
     environment:
       MYSQL_ROOT_PASSWORD: root
 
