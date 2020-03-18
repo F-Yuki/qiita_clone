@@ -15,8 +15,8 @@ gem "uglifier", ">= 1.3.0"
 gem "webpacker"
 
 gem "active_model_serializers"
-gem "devise_token_auth"
 gem "devise"
+gem "devise_token_auth"
 gem "rack-cors"
 
 group :development, :test do
@@ -29,10 +29,10 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop-performance"
   gem "rubocop-rails"
-  gem "rubocop-rspec"
   gem "factory_bot_rails"
+  gem "rubocop-rspec"
   gem "faker"
-  gem 'mini_racer'
+  gem "mini_racer"
 end
 
 group :development do
@@ -42,8 +42,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "annotate"
   gem "spring"
+  gem "rails-erd"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem 'rails-erd'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
