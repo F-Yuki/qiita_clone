@@ -28,10 +28,10 @@ group :development, :test do
   gem "pry-rails"
   gem "rspec-rails"
   gem "rubocop-performance"
-  gem "rubocop-rails"
   gem "factory_bot_rails"
-  gem "rubocop-rspec"
+  gem "rubocop-rails"
   gem "faker"
+  gem "rubocop-rspec"
   gem "mini_racer"
 end
 
@@ -41,10 +41,9 @@ group :development do
   gem "web-console", ">= 3.3.0"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "annotate"
-  gem "spring"
   gem "rails-erd"
+  gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
