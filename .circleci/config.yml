@@ -12,7 +12,8 @@ executors:
       - image: circleci/mysql:latest
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_ROOT_HOST: '127.0.0.1'
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_DATABASE: qiita_clone_test
     working_directory: ~/qiita_clone
 
 commands:
