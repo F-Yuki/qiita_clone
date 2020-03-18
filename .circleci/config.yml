@@ -10,6 +10,7 @@ executors:
           BUNDLE_PATH: vendor/bundle
           BUNDLER_VERSION: 2.0.1
       - image: circleci/mysql:latest
+        command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
     working_directory: ~/qiita_clone
@@ -100,10 +101,13 @@ jobs:
 workflows:
   build:
     jobs:
-      - fetch_source_code
       - bundle_dependencies:
           requires:
             - fetch_source_code
+      - rubocop:
+          requires:
+            - bundle_dependencies
+
       - rspec:
           requires:
             - bundle_dependencies
