@@ -78,7 +78,6 @@ jobs:
             bundle exec rspec --require rails_helper \
                               --color \
                               --format progress \
-                              --format RspecJunitFormatter \
                               --out ~/rspec/rspec.xml
       - store_test_results:
           path: ~/rspec
