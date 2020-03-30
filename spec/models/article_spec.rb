@@ -1,6 +1,6 @@
 require "rails_helper"
 
-Rspec.describe Article, type: :model do
+RSpec.describe Article, type: :model do
   describe "正常テスト" do
     context "タイトル、本文が入力されているとき" do
       let(:article) { build(:article) }

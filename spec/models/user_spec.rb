@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   describe "正常テスト" do
     context "名前,アカウント,email,パスワードが入力されているとき" do
-      let(:user) { build(:user) }　#let（共通処理の変数化）let(:定義名) {定義の内容、つまりRspecで行う処理} build/FactoryBotのインスタンスを作るメソッド
+      let(:user) { build(:user) }
       it "ユーザが作成できる" do
-        expect(user).to be_valid　#matcher(be_***)
+        expect(user).to be_valid
       end
     end
   end
