@@ -1,0 +1,15 @@
+example_id                              | status  | run_time        |
+--------------------------------------- | ------- | --------------- |
+./spec/models/article_like_spec.rb[1:1] | pending | 0.00002 seconds |
+./spec/models/article_spec.rb[1:1:1:1]  | failed  | 2.28 seconds    |
+./spec/models/article_spec.rb[1:2:1:1]  | failed  | 0.06698 seconds |
+./spec/models/article_spec.rb[1:2:2:1]  | passed  | 0.02104 seconds |
+./spec/models/comment_spec.rb[1:1:1:1]  | failed  | 0.00653 seconds |
+./spec/models/comment_spec.rb[1:2:1:1]  | failed  | 0.11512 seconds |
+./spec/models/user_spec.rb[1:1:1:1]     | failed  | 0.0091 seconds  |
+./spec/models/user_spec.rb[1:2:1:1:1]   | failed  | 0.01137 seconds |
+./spec/models/user_spec.rb[1:2:2:1:1]   | failed  | 0.01173 seconds |
+./spec/models/user_spec.rb[1:2:3:1:1]   | failed  | 0.04349 seconds |
+./spec/models/user_spec.rb[1:2:3:2:1]   | failed  | 0.00827 seconds |
+./spec/models/user_spec.rb[1:2:3:3:1]   | failed  | 0.0125 seconds  |
+./spec/models/user_spec.rb[1:2:4:1:1]   | failed  | 0.01084 seconds |
