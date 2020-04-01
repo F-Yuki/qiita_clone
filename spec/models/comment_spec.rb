@@ -1,6 +1,6 @@
 require "rails_helper"
 
-Rspec.describe Comment, type: :model do
+RSpec.describe Comment, type: :model do
   describe "正常テスト" do
     context "コメントが入力されているとき" do
       let(:comment) { build(:comment) }
